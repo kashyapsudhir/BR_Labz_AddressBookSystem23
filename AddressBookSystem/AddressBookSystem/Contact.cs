@@ -78,31 +78,122 @@ namespace AddressBookSystem
             }
 
             Console.WriteLine("********---------------********");
-        }
-        public void NewContactAdd()
-        {
-            Contact NewContact = new Contact();
 
-            Console.WriteLine("Enter Your Name");
-            NewContact.Name = Console.ReadLine();
-            Console.WriteLine("Enter Your Address");
-            NewContact.Address = Console.ReadLine();
-            Console.WriteLine("Enter Your City");
-            NewContact.city = Console.ReadLine();
-            Console.WriteLine("Enter Your State");
-            NewContact.State = Console.ReadLine();
-            Console.WriteLine("Enter Your Email");
-            NewContact.email = Console.ReadLine();
-            Console.WriteLine("Enter Your Zip");
-            NewContact.Zip = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Your Phone Number");
-            NewContact.phone = Convert.ToInt32(Console.ReadLine());
+            //public void NewContactAdd()
+            //{
+            //    Contact NewContact = new Contact();
+
+            //    Console.WriteLine("Enter Your Name");
+            //    NewContact.Name = Console.ReadLine();
+            //    Console.WriteLine("Enter Your Address");
+            //    NewContact.Address = Console.ReadLine();
+            //    Console.WriteLine("Enter Your City");
+            //    NewContact.city = Console.ReadLine();
+            //    Console.WriteLine("Enter Your State");
+            //    NewContact.State = Console.ReadLine();
+            //    Console.WriteLine("Enter Your Email");
+            //    NewContact.email = Console.ReadLine();
+            //    Console.WriteLine("Enter Your Zip");
+            //    NewContact.Zip = Convert.ToInt32(Console.ReadLine());
+            //    Console.WriteLine("Enter Your Phone Number");
+            //    NewContact.phone = Convert.ToInt32(Console.ReadLine());
 
 
+
+            //}
+
+            //public void Edit()
+            {
+                Console.WriteLine("Enter The Name to Edit The Contact");
+                string Name = Console.ReadLine();
+
+
+                foreach (var contactItems in contactList)
+                {
+                    if (contactItems.Name == Name)
+                    {
+
+
+                        // Taking Input by User Which Field want to Edit 
+                        Console.WriteLine("1. Name");
+                        Console.WriteLine("2. Address");
+                        Console.WriteLine("3. City");
+                        Console.WriteLine("4. state");
+                        Console.WriteLine("5. Email Address");
+                        Console.WriteLine("6. Zip Code ");
+                        Console.WriteLine("7. Phone Number ");
+
+                        Console.WriteLine("Enter the Field number you Want to Edit ");
+                        int Choice = Convert.ToInt32(Console.ReadLine());
+
+                        // using Switch to Edit The Field Choose By User
+                        switch (Choice)
+                        {
+                            case 1:
+                                Console.Write("Enter the New First Name : ");
+                                string New_Name = Console.ReadLine();
+                                contactItems.Name = New_Name;
+                                break;
+
+                            case 2:
+                                Console.Write("New Address : ");
+                                string New_Address = Console.ReadLine();
+                                contactItems.Address = New_Address;
+                                break;
+                            case 3:
+                                Console.Write("New City : ");
+                                string New_City = Console.ReadLine();
+                                contactItems.city = New_City;
+                                break;
+                            case 4:
+                                Console.Write("New State : ");
+                                string New_State = Console.ReadLine();
+                                contactItems.State = New_State;
+                                break;
+                            case 5:
+                                Console.Write("New Email Address : ");
+                                string New_Email_Address = Console.ReadLine();
+                                contactItems.email = New_Email_Address;
+                                break;
+                            case 6:
+                                Console.Write("New Zip Code : ");
+                                int New_Zip_Code = Convert.ToInt32(Console.ReadLine());
+                                contactItems.Zip = New_Zip_Code;
+                                break;
+                            case 7:
+                                Console.Write("New Phone Number : ");
+                                int New_Phone_Number = Convert.ToInt32(Console.ReadLine());
+                                contactItems.phone = New_Phone_Number;
+                                break;
+
+                            default:
+                                Console.WriteLine(" Please Enter Correct Choice Number");
+                                break;
+                        }
+
+                    }
+                    else
+                    {
+                        Console.WriteLine(" Your Input Didn't Match the List of Contacts");
+                    }
+                }
+
+                foreach (var NewContactItems in contactList)
+                {
+                    Console.WriteLine(NewContactItems.Name);
+                    Console.WriteLine(NewContactItems.Address);
+                    Console.WriteLine(NewContactItems.city);
+                    Console.WriteLine(NewContactItems.State);
+                    Console.WriteLine(NewContactItems.email);
+                    Console.WriteLine(NewContactItems.Zip);
+                    Console.WriteLine(NewContactItems.phone);
+                    Console.WriteLine("*******************************************************************");
+
+                }
+            }
 
         }
 
 
     }
-
 }
