@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace AddressBookSystem
@@ -75,7 +76,33 @@ namespace AddressBookSystem
                 Console.WriteLine(contacts.phone);
                 Console.WriteLine("-------------------------------");
             }
+
+            Console.WriteLine("********---------------********");
         }
+        public void NewContactAdd()
+        {
+            Contact NewContact = new Contact();
+
+            Console.WriteLine("Enter Your Name");
+            NewContact.Name = Console.ReadLine();
+            Console.WriteLine("Enter Your Address");
+            NewContact.Address = Console.ReadLine();
+            Console.WriteLine("Enter Your City");
+            NewContact.city = Console.ReadLine();
+            Console.WriteLine("Enter Your State");
+            NewContact.State = Console.ReadLine();
+            Console.WriteLine("Enter Your Email");
+            NewContact.email = Console.ReadLine();
+            Console.WriteLine("Enter Your Zip");
+            NewContact.Zip = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Your Phone Number");
+            NewContact.phone = Convert.ToInt32(Console.ReadLine());
+
+
+
+        }
+
+
     }
 
 }

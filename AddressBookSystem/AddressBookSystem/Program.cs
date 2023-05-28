@@ -10,6 +10,7 @@ namespace AddressBookSystem
 
             AddressBook addressBook = new AddressBook();
             addressBook.Contact();
+            addressBook.NewContactAdd();
         }
     }
 }
